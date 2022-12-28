@@ -1,18 +1,24 @@
+{{!-- <div class='card mx-auto' style='width: 25rem; border:none; margin-top:15%'>
+  <a href="./login" class='text-center'>
+    <h1 class='mx-auto'>Click here to Login</h1>
+  </a>
+</div> --}}
 <div class='card mx-auto' style='width: 18rem; border:none; margin-top:15%'>
   <h1 class=' mx-auto'>Login</h1>
   <div class='card-body'>
-    <form>
+    <form action="/login" method="POST">
       <div class='mb-3'>
         <label for='exampleInputEmail1' class='form-label'>Email address</label>
-        <input type='email' class='form-control' id='exampleInputEmail1' aria-describedby='emailHelp' placeholder="Email"/>
+        <input type='email' name='email' class='form-control' id='exampleInputEmail1' aria-describedby='emailHelp'
+          placeholder="Email" />
         {{!-- <div id='emailHelp' class='form-text'>We'll never share your email with
           anyone else.</div> --}}
       </div>
       <div class='mb-3'>
         <label for='exampleInputPassword1' class='form-label'>Password</label>
-        <input type='password' class='form-control' id='exampleInputPassword1' placeholder="Password" />
+        <input type='password' name='password' class='form-control' id='exampleInputPassword1' placeholder="Password" />
       </div>
-      
+
       <button type='submit' class='btn btn-primary d-block mx-auto'>Submit</button>
     </form>
 

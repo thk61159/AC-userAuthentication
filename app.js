@@ -1,7 +1,7 @@
 const express = require('express');
 const { engine } = require('express-handlebars');
 require('./config/mongoose');
-const user = require('./models/user')
+const user = require('./models/user');
 const routes = require('./routes/index');
 
 const app = express();
@@ -13,7 +13,6 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
-
 
 app.listen(PORT, () => {
   console.log(`app is listening on http://localhost:${PORT}`);

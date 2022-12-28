@@ -1,5 +1,5 @@
-const user = require('../user')
-const db = require('../../config/mongoose')
+const user = require('../user');
+const db = require('../../config/mongoose');
 const users = [
   {
     firstName: 'Tony',
@@ -37,6 +37,5 @@ db.once('open', () => {
     })
   );
 
-
   console.log('Done');
-})
+});
