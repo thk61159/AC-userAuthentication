@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
       if (e) {
         res.redirect(`./login/${e._id}`);
       } else {
-        res.redirect(`./`);
+        res.redirect(`./?wrong=wrong`);
       }
     })
     .catch((err) => console.log(err));

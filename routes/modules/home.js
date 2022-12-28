@@ -3,7 +3,8 @@ const router = express.Router();
 const user = require('../../models/user');
 
 router.get('/', (req, res) => {
-  res.render('index');
+  let wrong = req.query.wrong
+  res.render('index', { wrong });
 });
 
 module.exports = router;
