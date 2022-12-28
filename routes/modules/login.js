@@ -13,17 +13,22 @@ router.post('/', (req, res) => {
     .then((e) => {
       console.log(e);
       if (e) {
-        res.redirect(`./login/${e.firstName}`);
+        res.redirect(`./login/${e._id}`);
       } else {
         res.redirect(`./`);
       }
     })
     .catch((err) => console.log(err));
 });
-router.get('/:userFirstname', (req, res) => {
-  console.log(req.params.userFirstname);
-  const firstName = req.params.userFirstname;
-  res.render('userPage', { firstName });
+router.get('/:id', (req, res) => {
+  const id = req.params.id;
+  user.findById(id)
+    .lean()
+    .then((e) => {
+      res.render('userPage', { firstName: e.firstName });
+    })
+    .catch((err) => console.log(err));
+  
 });
 
 module.exports = router;
